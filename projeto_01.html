@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./projeto_01.css">
+    <link rel="shortcut icon" href="./imagens/book.png" type="image/x-icon">
+    <title>DEVinKnowledge</title>
+</head>
+
+<body onload="mostrarDados(objDicas)">
+    <div class="formulario">
+        <header>
+            <img class="imgLivro" src="./imagens/book.png" alt="Imagem de um livro">
+            <h2>DEVin</h2>
+            <h1>Knowledge</h1><strong></strong>
+            <h3>Learn, Code and Save</h3>
+        </header>
+
+        <form action="projeto_01.html">
+            <label>Título</label><br>
+            <input class="input" id="digTitulo" type="text" placeholder="Digite um título" required minlength="8"
+                maxlength="64">
+            <label>Linguagem/Skill</label> <br>
+            <input class="input" id="digLinguagem" type="text" placeholder="Digite uma linguagem ou skill" required
+                minlength="4" maxlength="16"> <br>
+
+            <label>Categoria</label><br>
+            <select class="input" name="selCategoria" id="selCategoria" required>
+                <option value="">Selecione uma categoria</option>
+                <option value="FrontEnd">FrontEnd</option>
+                <option value="BackEnd">BackEnd</option>
+                <option value="FullStack">FullStack</option>
+                <option value="Comportamental/Soft">Comportamental/Soft</option>
+            </select>
+
+            <label>Descrição</label><br>
+            <textarea name="digDescricao" id="digDescricao" cols="30" rows="10"
+                placeholder="Escreva aqui o detalhamento da sua dica..." required minlength="32"
+                maxlength="512"></textarea>
+
+            <label>Vídeo do YouTube</label> <br>
+            <input class="input" id="urlVideo" type="url" placeholder="Inclua o link do vídeo">
+            <div class="button">
+                <button type="reset" id="btnLimpar">Limpar</button>
+                <button type="submit" id="btnSalvar" onclick="salvarDados()">Salvar</button>
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <div class="knowledge">
+        <div class="container">
+            <div id="card">
+                <p>Total</p>
+                <p class="valor" id="valorT"></p>
+            </div>
+
+            <div id="card">
+                <p>FrontEnd</p>
+                <p class="valor" id="valorF"></p>
+            </div>
+
+            <div id="card">
+                <p>BackEnd</p>
+                <p class="valor" id="valorB"></p>
+            </div>
+
+            <div id="card">
+                <p>FullStack</p>
+                <p class="valor" id="valorFS"></p>
+            </div>
+
+            <div id="card">
+                <p>SoftSkill</p>
+                <div class="valor" id="valorS"></div>
+
+            </div>
+        </div>
+
+        <div class="container2">
+
+            <input id="inputPesquisar" type="text" placeholder="Digite um título para buscar...">
+
+
+            <button type="button" id="btnPesquisar" onclick="pesquisarDados()" class="btnPequeno">
+                <img class="imgBtnPequeno" src="./imagens/magnifying-glass-solid.svg">
+            </button>
+
+
+            <button type="reset" id="btnLimparPesquisa" onclick="limparPesquisa()" class="btnPequeno">
+                <img class="imgBtnPequeno" src="./imagens/xmark-solid.svg">
+            </button>
+
+        </div>
+
+        <div id="container3">
+
+        </div>
+
+    </div>
+    <script src="./projeto_01.js" default></script>
+</body>
+
+</html>
